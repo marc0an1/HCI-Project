@@ -112,3 +112,17 @@ body {
 .dot.active, .dot:hover {
     background-color: #717171;
 }
+
+.footer {
+    margin-top: 115px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;
+    
+}
