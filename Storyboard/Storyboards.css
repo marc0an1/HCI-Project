@@ -9,6 +9,42 @@ body {
     margin: 0;
 }
 
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #444;
+}
+
+.navbar-logo img {
+    width: 120px;
+    height: auto;
+}
+
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+.navbar-links li {
+    margin-left: 0px;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #666;
+    border-radius: 4px;
+}
+
 .slideshow-container {
     position: relative;
     max-width: 1000px;

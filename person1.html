@@ -66,9 +66,63 @@
             margin-right: 5px;
             margin-top: 10px;
         }
+
+        /*Navbar style*/
+        /* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #444;
+}
+
+.navbar-logo img {
+    width: 120px;
+    height: auto;
+}
+
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+.navbar-links li {
+    margin-left: 0px;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #666;
+    border-radius: 4px;
+}
+
+
     </style>
 </head>
 <body>
+      <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+        <a href="index.html">
+            <img src="./Storyboard/SwiftBatLogoTransparentC.png" alt="Logo">
+        </a>
+    </div>
+    <ul class="navbar-links">
+        <li><a href="./Storyboard/person1.html">Persona 1</a></li>
+        <li><a href="./Storyboard/about.html">Persona 2</a></li>
+        <li><a href="./Storyboard/Storyboards.html">Scenario</a></li>
+        <li><a href="./Storyboard/Storyboards.html">Storyboard</a></li>
+        <li><a href="./Storyboard/Storyboards.html">Moodboard</a></li>
+    </ul>
+</nav>
 <div class="container">
     <div class="header">
         <h1>Emergency Traveler</h1>
