@@ -1,0 +1,93 @@
+/* CSS Reset and Box Sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #001f3f; /* Dark Blue Background */
+    color: #FFD700; /* Gold Text Color for the Theme */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styling */
+.container {
+    width: 80%;
+    max-width: 900px;
+    background-color: white; /* White Background for the Info Section */
+    color: black; /* Black Text Color for Readability */
+    margin: 40px auto; /* Center the Container with Margin */
+    padding: 20px;
+    border-radius: 10px; /* Rounded Corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle Shadow for Elevation */
+}
+
+/* Heading Styling */
+h1 {
+    color: #001f3f; /* Dark Blue Color for Main Heading */
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #FFD700; /* Gold Border for Emphasis */
+}
+
+/* Section Styling */
+.info-section {
+    padding: 15px 0;
+    line-height: 1.6;
+}
+
+/* Subheadings */
+.info-section h2 {
+    color: #001f3f; /* Dark Blue for Subheadings */
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* Footer Styling */
+.footer {
+    width: 100%; /* Ensures footer occupies full width */
+    padding: 20px;
+    background-color: #001f3f; /* Slightly darker blue for footer */
+    color: #FFD700;
+    text-align: center;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%; /* Ensures navbar occupies full width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: 001f3f4;
+}
+
+.navbar-logo img {
+    width: 120px;
+    height: auto;
+}
+
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-links li {
+    margin-left: 0px;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #dac96b;
+    border-radius: 4px;
+}

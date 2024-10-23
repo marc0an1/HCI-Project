@@ -8,7 +8,7 @@
 /* Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #333;
+    background-color: #f2f2f2;
     color: white;
     margin: 0; /* Removes default body margin */
     min-height: 100vh; /* Ensures the body occupies the full height */
@@ -23,7 +23,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #444;
+    background-color: #001f3f;
 }
 
 .navbar-logo img {
@@ -48,7 +48,7 @@ body {
 }
 
 .navbar-links a:hover {
-    background-color: #666;
+    background-color: #dac96b;
     border-radius: 4px;
 }
 
@@ -117,7 +117,7 @@ body {
 .footer {
     width: 100%; /* Ensures footer occupies full width */
     padding: 20px;
-    background-color: #333;
-    color: white;
+    background-color: #001f3f;;
+    color: #FFD700;
     text-align: center;
 }

@@ -68,7 +68,8 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 10px 20px;
-background-color: #444;
+background-color: #001f3f; /* Slightly darker blue for footer */
+
 }
 
 .navbar-logo img {
@@ -94,16 +95,16 @@ transition: background-color 0.3s ease;
 }
 
 .navbar-links a:hover {
-background-color: #666;
+background-color: #dac96b;
 border-radius: 4px;
 }
 
 .footer {
     margin-top: 50px;
     padding: 20px;
-    background-color: #333;
-    color: white;
-    }
+    background-color: #001f3f; /* Slightly darker blue for footer */
+    color: #FFD700;
+}
     
     .footer p {
     margin: 0;
