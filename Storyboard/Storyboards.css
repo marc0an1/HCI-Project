@@ -4,7 +4,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #333;
+    background-color: #f2f2f2;
     color: white;
     margin: 0;
 }
@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #444;
+    background-color: #001f3f; /* Slightly darker blue for footer */
 }
 
 .navbar-logo img {
@@ -41,7 +41,7 @@ body {
 }
 
 .navbar-links a:hover {
-    background-color: #666;
+    background-color: #dac96b;
     border-radius: 4px;
 }
 
@@ -116,8 +116,8 @@ body {
 .footer {
     margin-top: 115px;
     padding: 20px;
-    background-color: #333;
-    color: white;
+    background-color: #001f3f; /* Slightly darker blue for footer */
+    color: #FFD700;
     
 }
 
