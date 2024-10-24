@@ -105,9 +105,8 @@ border-radius: 4px;
     background-color: #001f3f; /* Slightly darker blue for footer */
     color: #FFD700;
 }
-    
-    .footer p {
+.footer p {
     margin: 0;
     text-align: center
-    }
+}
 

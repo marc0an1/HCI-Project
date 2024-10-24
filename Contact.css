@@ -7,13 +7,13 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    background-color: #001f3f;
-    padding: 15px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #001f3f; /* Slightly darker blue for footer */
+    
+    }
 .navbar-logo img {
     width: 120px;
     height: auto;
@@ -40,12 +40,14 @@ body {
 }
 
 .footer {
-    width: 100%; /* Ensures footer occupies full width */
+    margin-top: 50px;
     padding: 20px;
     background-color: #001f3f; /* Slightly darker blue for footer */
     color: #FFD700;
-    text-align: center;
-    margin-top: auto; /* Pushes the footer to the bottom */
+}
+.footer p {
+    margin: 0;
+    text-align: center
 }
 
 /* Contact Container Styles */
