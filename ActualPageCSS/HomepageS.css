@@ -1,0 +1,104 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .sign-in a {
+    text-decoration: none;
+    color: white;
+}
+
+.hero {
+    text-align: center;
+    background-image: url('plane-background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 10px 0 0;
+}
+
+.search-form {
+    background-color: #d3d3d3;
+    padding: 20px;
+    border-radius: 10px;
+    margin: -50px auto 0;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.search-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.search-form .form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.search-form select,
+.search-form input,
+.search-form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form button {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #333;
+}

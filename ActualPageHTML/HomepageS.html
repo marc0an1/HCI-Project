@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftBat</title>
+    <link rel="stylesheet" href="/ActualPageCSS/HomepageS.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="swiftbat-logo.png" alt="SwiftBat Logo">
+            <span>SWIFTBAT</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Book</a></li>
+                <li><a href="#">Manage Trips</a></li>
+                <li><a href="#">Check In</a></li>
+                <li><a href="#">Travel Info</a></li>
+            </ul>
+        </nav>
+        <div class="sign-in">
+            <a href="#">Sign In</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>FLY WITH US!</h1>
+            <p>Flights</p>
+        </section>
+        <section class="search-form">
+            <form>
+                <div class="form-row">
+                    <select>
+                        <option value="roundtrip">Roundtrip</option>
+                        <option value="oneway">One Way</option>
+                    </select>
+                    <select>
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <input type="text" placeholder="From">
+                    <input type="text" placeholder="To">
+                </div>
+                <div class="form-row">
+                    <input type="date" placeholder="Depart">
+                    <input type="date" placeholder="Return">
+                </div>
+                <button type="submit">Search flights</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
