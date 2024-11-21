@@ -4,33 +4,41 @@ body {
     background-color: #f4f4f4;
 }
 
+@font-face {
+    font-family: 'Naville';
+    src: url('c:\Users\Ceje1\Desktop\Naville\Naville-Regular DEMO.ttf') format('truetype');
+    /* Replace with the correct path */
+    font-weight: normal;
+    font-style: normal;
+}
+
 .navbar {
+    font-family: 'NAVILL', sans-serif;
+        /* Fallback to sans-serif if NAVILL is unavailable */
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: #001f3f;
     color: white;
-    padding: 0.0001rem 0.0001rem;
-    /* Relative units for padding */
-}
-
-.navbar .logo {
-    display: flex;
-    align-items: center;
+    padding: 0.5rem 1rem;
+    /* Reduced padding for smaller height */
+    height: 50px;
+    /* Optional: Set a fixed height if desired */
 }
 
 .navbar .logo img {
-    width: auto;
-    /* Scales based on screen size */
-    height: auto;
-    margin-right: 0.5rem;
+    height: 60px;
+    /* Reduce logo size to fit within the smaller navbar */
+    width: 100px;
+    /* Maintain aspect ratio */
 }
 
 .navbar nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
-    /* Responsive spacing */
+    gap: 1rem;
+    /* Adjust spacing between links if necessary */
     margin: 0;
     padding: 0;
 }
@@ -38,16 +46,22 @@ body {
 .navbar nav ul li a {
     text-decoration: none;
     color: white;
+    font-size: 0.9rem;
+    /* Optional: Adjust font size for smaller navbar */
 }
 
 .navbar .sign-in a {
     text-decoration: none;
     color: white;
+    font-size: 0.9rem;
+    /* Optional: Match font size to links */
 }
 
 /*The sign in images*/
 
 .sign-in {
+    font-family: 'NAVILL', sans-serif;
+    margin-right: 50px;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -178,7 +192,7 @@ body {
 }
 
 .search-form button {
-    background-color: black;
+    background-color: #001f3f;
     color: white;
     border: none;
     cursor: pointer;
@@ -193,4 +207,15 @@ body {
 
 .search-form button:hover {
     background-color: #333;
+}
+
+/* Footer Styling */
+.footer {
+    margin-top: 12rem;
+    width: 97.39333%;
+    /* Ensures footer occupies full width */
+    padding: 20px;
+    background-color: #001f3f;
+    color: #FFD700;
+    text-align: center;
 }
