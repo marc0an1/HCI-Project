@@ -3,24 +3,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const flightOptionsContainer = document.querySelector('.flight-options');
     const flightInfoContainer = document.querySelector('.flight-info');
     const priceSection = document.querySelector('.price-section');
-    const continueButton = document.querySelector('.price-section button'); // Select the continue button
+    const continueButton = document.querySelector('.price-section button');
 
-    // Retrieve the flight data from localStorage
+    // Retrieve the flight and departing flight data from localStorage
     const flightData = JSON.parse(localStorage.getItem('flightData'));
+    const departingFlight = JSON.parse(localStorage.getItem('departingFlight'));
 
-    if (flightData) {
-        const { from, to, departDate, returnDate, adults, children, tripType } = flightData;
+    if (flightData && departingFlight) {
+        const { from, to, returnDate, adults, children } = flightData;
 
         // Update the summary bar
         const totalTravelers = parseInt(adults) + parseInt(children);
         summaryBar.innerHTML = `
-            <span><strong>${from} ➜ ${to}</strong></span> ||
-            <span><strong>${departDate}${returnDate ? ` || ${returnDate}` : ''}</strong></span> ||
+            <span><strong>${to} ➜ ${from}</strong></span> ||
+            <span><strong>${returnDate}</strong></span> ||
             <span><strong>${totalTravelers} Traveler${totalTravelers > 1 ? 's' : ''}</strong></span>
         `;
 
         // Generate dynamic flight options
-        const selectedDate = new Date(departDate);
+        const selectedDate = new Date(returnDate);
         const options = generateFlightOptions(selectedDate);
 
         // Populate the flight options container
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             optionDiv.className = `date-option ${index === 1 ? 'selected' : ''}`; // Default to selecting the middle option
             optionDiv.dataset.date = option.date;
             optionDiv.dataset.price = option.price;
-            optionDiv.dataset.timeAndDuration = JSON.stringify(generateTimeAndDuration()); // Generate time and duration
+            optionDiv.dataset.timeAndDuration = JSON.stringify(generateTimeAndDuration());
             optionDiv.innerHTML = `
                 <div>${option.date}</div>
                 <div>$${option.price}</div>
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Add click event to update the flight details
             optionDiv.addEventListener('click', () => {
-                updateFlightDetails(optionDiv, from, to);
+                updateFlightDetails(optionDiv, to, from);
                 // Highlight the selected option
                 document.querySelectorAll('.date-option').forEach(option => option.classList.remove('selected'));
                 optionDiv.classList.add('selected');
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize with the first selected option
         const defaultSelectedOption = flightOptionsContainer.querySelector('.date-option.selected');
         if (defaultSelectedOption) {
-            updateFlightDetails(defaultSelectedOption, from, to);
+            updateFlightDetails(defaultSelectedOption, to, from);
         }
 
         // Handle Continue button click
@@ -62,30 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Save the selected departing flight details in localStorage
+            // Save the selected returning flight details in localStorage
             const { startTime, endTime, duration } = JSON.parse(selectedOption.dataset.timeAndDuration);
-            const departingFlightDetails = {
+            const returningFlightDetails = {
                 date: selectedOption.dataset.date,
                 price: selectedOption.dataset.price,
                 time: { startTime, endTime },
-                duration
+                duration,
             };
 
-            localStorage.setItem('departingFlight', JSON.stringify(departingFlightDetails));
+            localStorage.setItem('returningFlight', JSON.stringify(returningFlightDetails));
 
-            // Redirect to the returning flight page if roundtrip, otherwise show a summary
-            if (tripType && tripType.trim().toLowerCase() === 'roundtrip' && returnDate) {
-                window.location.href = '/ActualPageHTML/ReturningFlightS.html';
-            } else {
-                window.location.href = '/ActualPageHTML/TripSummaryS.html';
-            }
+            // Redirect to the Trip Summary page
+            window.location.href = '/ActualPageHTML/TripSummaryS.html';
         });
     } else {
         summaryBar.innerHTML = '<span><strong>No Data Available</strong></span>';
     }
 });
 
-// Function to generate flight options with random prices
+// Helper functions (same as before)
+
 function generateFlightOptions(selectedDate) {
     const options = [];
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -99,24 +97,22 @@ function generateFlightOptions(selectedDate) {
         const monthName = months[optionDate.getMonth()];
         const date = `${dayName} ${monthName} ${optionDate.getDate()}`;
 
-        const randomPrice = Math.floor(Math.random() * (900 - 300 + 1)) + 300; // Random price between $300 and $900
+        const randomPrice = Math.floor(Math.random() * (900 - 300 + 1)) + 300;
 
         options.push({
             date,
-            price: randomPrice
+            price: randomPrice,
         });
     }
 
     return options;
 }
 
-// Function to generate a random start time and calculate end time (fixed duration: 3h 20m)
 function generateTimeAndDuration() {
-    const startHour = Math.floor(Math.random() * 12) + 1; // Random hour between 1 and 12
-    const startMinute = Math.floor(Math.random() * 60); // Random minute
+    const startHour = Math.floor(Math.random() * 12) + 1;
+    const startMinute = Math.floor(Math.random() * 60);
     const startPeriod = Math.random() > 0.5 ? 'AM' : 'PM';
 
-    // Fixed duration: 3h 20m
     const totalMinutes = startHour * 60 + startMinute + 3 * 60 + 20;
     const endHour = Math.floor((totalMinutes / 60) % 12) || 12;
     const endMinute = totalMinutes % 60;
@@ -125,11 +121,10 @@ function generateTimeAndDuration() {
     return {
         startTime: `${startHour}:${startMinute.toString().padStart(2, '0')} ${startPeriod}`,
         endTime: `${endHour}:${endMinute.toString().padStart(2, '0')} ${endPeriod}`,
-        duration: `3h 20m`
+        duration: `3h 20m`,
     };
 }
 
-// Function to update flight details
 function updateFlightDetails(selectedOption, from, to) {
     const { startTime, endTime, duration } = JSON.parse(selectedOption.dataset.timeAndDuration);
     const price = selectedOption.dataset.price;
@@ -148,37 +143,23 @@ function updateFlightDetails(selectedOption, from, to) {
         <button id="continueButton">Continue</button>
     `;
 
-    // Dynamically add the event listener for the newly created button
-    document.getElementById('continueButton').addEventListener('click', handleContinueButtonClick);
+    // Re-attach the event listener for the dynamically created button
+    document.getElementById('continueButton').addEventListener('click', () => {
+        const selectedOption = document.querySelector('.date-option.selected');
+        if (!selectedOption) {
+            alert('Please select a flight before continuing.');
+            return;
+        }
+
+        const { startTime, endTime, duration } = JSON.parse(selectedOption.dataset.timeAndDuration);
+        const returningFlightDetails = {
+            date: selectedOption.dataset.date,
+            price: selectedOption.dataset.price,
+            time: { startTime, endTime },
+            duration,
+        };
+
+        localStorage.setItem('returningFlight', JSON.stringify(returningFlightDetails));
+        window.location.href = '/ActualPageHTML/TripSummaryS.html';
+    });
 }
-
-// Function to handle the continue button click
-function handleContinueButtonClick() {
-    const flightData = JSON.parse(localStorage.getItem('flightData'));
-    const { tripType, returnDate } = flightData || {};
-
-    const selectedOption = document.querySelector('.date-option.selected');
-    if (!selectedOption) {
-        alert('Please select a flight before continuing.');
-        return;
-    }
-
-    const { startTime, endTime, duration } = JSON.parse(selectedOption.dataset.timeAndDuration);
-    const departingFlightDetails = {
-        date: selectedOption.dataset.date,
-        price: selectedOption.dataset.price,
-        time: { startTime, endTime },
-        duration,
-    };
-
-    localStorage.setItem('departingFlight', JSON.stringify(departingFlightDetails));
-
-    if (tripType === 'roundtrip' && returnDate) {
-        window.location.href = '/ActualPageHTML/ReturningFlightS.html';
-    } else {
-        window.location.href = '/ActualPageHTML/ReturningFlightS.html';
-    }
-}
-
-document.getElementById('continueButton')?.addEventListener('click', handleContinueButtonClick);
-

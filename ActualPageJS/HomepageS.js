@@ -77,3 +77,26 @@ document.querySelector('form').addEventListener('submit', (e) => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Add event listener for the search form
+    const searchForm = document.querySelector('.search-form form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', handleSearchSubmit);
+    }
+
+    // Add event listener for updating traveler text
+    const travelerForm = document.querySelector('form');
+    if (travelerForm) {
+        travelerForm.addEventListener('submit', (e) => {
+            const validLocations = ['Miami, Florida', 'San Antonio, Texas'];
+            const fromLocation = document.getElementById('from-location').value;
+            const toLocation = document.getElementById('to-location').value;
+
+            if (!validLocations.includes(fromLocation) || !validLocations.includes(toLocation)) {
+                e.preventDefault(); // Prevent form submission
+                alert('Please select valid locations: Miami, Florida or San Antonio, Texas.');
+            }
+        });
+    }
+});
+
