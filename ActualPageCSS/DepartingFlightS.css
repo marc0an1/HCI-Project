@@ -1,0 +1,392 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure the body takes the full viewport height */
+}
+
+@font-face {
+    font-family: 'Naville';
+    src: url('c:\Users\Ceje1\Desktop\Naville\Naville-Regular DEMO.ttf') format('truetype');
+    /* Replace with the correct path */
+    font-weight: normal;
+    font-style: normal;
+}
+main {
+    flex: 1;
+    /* Allow the main content to expand and fill the available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar {
+    font-family: 'NAVILL', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #001f3f;
+    color: white;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    height: 50px;
+    /* Consistent height across pages */
+    position: fixed;
+    /* Ensures it stays at the top */
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Adds a shadow */
+}
+
+.navbar .logo img {
+    height: 60px;
+    /* Reduce logo size to fit within the smaller navbar */
+    width: 100px;
+    /* Maintain aspect ratio */
+    margin-top: 30px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    /* Optional: Adjust font size for smaller navbar */
+}
+
+.navbar .sign-in a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    /* Optional: Match font size to links */
+}
+
+/*This is the logo*/
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: -30px;
+    /* Move the logo up by 20px */
+}
+
+.logo-image {
+    max-width: 100%;
+    height: 50px;
+    /* Increased height */
+    max-height: 100px;
+    /* Increased max height */
+}
+
+
+
+
+/* Hero Section Styling */
+/* Hero Section Styling */
+/* Hero Section Styling */
+.flight-selection {
+    text-align: center;
+    background-image: url('AirplanePic.JPG');
+    background-size: cover;
+    background-position: 80% 15%;
+    /* Move the image more to the left */
+    /* Adjust focus point */
+    padding: 0vh 0vw 5vw 5vw;
+    color: white;
+    position: relative;
+    height: calc(100vh - 60px);
+        /* Full height minus the navbar height */    width: 100%;
+    /* Adjust height to crop less/more */
+    overflow: hidden;
+    /* Ensure child elements stay within bounds */
+}
+
+/* Add an overlay to darken the background */
+.flight-selection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    z-index: 1;
+    /* Ensure it appears above the image but below content */
+}
+
+.hero-title{
+    margin-top: 102px;
+    font-size: 1.5rem;
+}
+
+
+
+.flight-selection h1,
+.flight-selection p,
+.flight-selection h2 {
+        position: relative;
+            z-index: 2;
+            margin: 1rem 0;
+            font-size: 3rem;
+}
+
+.summary-bar {
+        background-color: rgba(255, 255, 255, 0.8);
+            /* Add a semi-transparent white background */
+            border-radius: 30px;
+            padding: 10px;
+            margin: 20px auto;
+            width: 750px;
+            max-width: 900px;
+            color: black;
+            /* Text color for the flight selection */
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.3rem;
+            height: 27px;
+}
+
+.flight-selection {
+    padding: 2rem;
+    text-align: center;
+}
+
+.flight-selection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    /* Space below the title */
+}
+.flight-options {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    /* Space between options */
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    /* Adjust this value to move it down */
+    z-index: 2;
+}
+
+.date-option {
+    
+    background-color: #001f3f;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    /* Increase padding for a larger appearance */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.2rem;
+    /* Increase font size */
+    z-index: 2;
+}
+
+.date-option.selected {
+    background-color: #34608f;
+    font-weight: bold;
+}
+
+.date-option:hover {
+    background-color: #dfdc9a;
+}
+
+
+
+.aesthetic-square {
+    background-color: #34608f;
+    /* Soft blue background */
+    color: white;
+    /* White text for contrast */
+    border-radius: 1rem;
+    /* Rounded corners */
+    padding: 1.5rem;
+    /* Padding inside the box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    display: flex;
+    /* Flexbox for layout */
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items horizontally */
+    width: 25%;
+    /* Limit the width */
+    margin: 5rem auto;
+    /* Center horizontally with spacing */
+    text-align: center;
+    /* Center text inside */
+}
+
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    /* Space between flight info and price */
+    align-items: center;
+    width: 100%;
+    /* Take up full width of the box */
+    gap: 1rem;
+    /* Add spacing between columns */
+}
+
+.flight-info {
+    flex: 2;
+    /* Allocate more space for the flight details */
+    text-align: left;
+    /* Align text to the left */
+}
+
+.price-section {
+    flex: 1;
+    /* Allocate less space for the price section */
+    text-align: right;
+    /* Align text to the right */
+    
+}
+
+.price-section button {
+    background-color: #001f3f;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 100;
+    position: relative;
+}
+
+.price-section button:hover {
+    background-color: #17232f;
+    /* Slightly lighter blue on hover */
+}
+
+.flight-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.flight-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    z-index: 2;
+}
+
+.flight-card p {
+    margin: 0.5rem 0;
+}
+
+.flight-card button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #001f3f;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    z-index: 2;
+}
+
+.flight-card button:hover {
+    background-color: #333;
+    z-index: 2;
+}
+
+.footer {
+    width: 100%;
+    height: 60px;
+    background-color: #001f3f;
+    color: #FFD700;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Footer is not fixed but sticks to the bottom due to flexbox */
+    z-index: 10;
+    margin-top: auto;
+    /* Push the footer to the bottom if content is short */
+    padding: 0.5rem 1rem;
+}
+
+.flight-info {
+    padding: 20px;
+    text-align: left;
+    z-index: 2;
+}
+
+.flight-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    z-index: 2;
+}
+
+.flight-info p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    
+}
+
+/*The sign in images*/
+
+.sign-in {
+    font-family: 'NAVILL', sans-serif;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* Adds space between the image and the text */
+}
+
+.sign-in .user-icon {
+    width: 20px;
+    /* Adjust the size of the image */
+    height: 20px;
+    border-radius: 50%;
+    /* Makes it circular if the image is square */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flight-selection {
+        background-position: 90% 10%;
+        /* Adjust for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .flight-selection {
+        background-position: 95% 10%;
+        /* Adjust for smaller screens */
+    }
+}

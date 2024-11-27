@@ -1,7 +1,16 @@
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #001f3f;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+    line-height: 1.5;
+    /* Improve readability */
 }
 
 @font-face {
@@ -12,25 +21,25 @@ body {
     font-style: normal;
 }
 
+/* Navbar */
 .navbar {
-    font-family: 'NAVILL', sans-serif;
-        /* Fallback to sans-serif if NAVILL is unavailable */
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #001f3f;
     color: white;
-    padding: 0.5rem 1rem;
-    /* Reduced padding for smaller height */
-    height: 50px;
-    /* Optional: Set a fixed height if desired */
-}
-
-.navbar .logo img {
+    padding: 0.5rem 2%;
+    width: 100%;
     height: 60px;
-    /* Reduce logo size to fit within the smaller navbar */
-    width: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar .logo img {
+    height: 50px;
+    width: auto;
     /* Maintain aspect ratio */
 }
 
@@ -38,7 +47,6 @@ body {
     list-style: none;
     display: flex;
     gap: 1rem;
-    /* Adjust spacing between links if necessary */
     margin: 0;
     padding: 0;
 }
@@ -46,8 +54,7 @@ body {
 .navbar nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 0.9rem;
-    /* Optional: Adjust font size for smaller navbar */
+    font-size: 1rem;
 }
 
 .navbar .sign-in a {
@@ -94,19 +101,36 @@ body {
     /* Increased max height */
 }
 
+/* Hero Section */
 .hero {
     position: relative;
-    /* Allows positioning of child elements like the search form */
-    text-align: center;
-    background-image: url('AirplanePic.JPG');
-    background-size: cover;
-    background-position: center 10%;
-    /* Moves the image down slightly */
-    padding: 20vh 5vw;
-    /* Increased padding for better spacing */
-    color: white;
+    width: 100%;
+    height: 60vh;
+    /* Adjust height for smaller screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    /* Ensures the overlay stays within the bounds of the hero section */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(50%);
+    /* Darken the video itself */
+}
+
+.hero-title {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
 }
 
 .hero::before {
@@ -116,65 +140,53 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Adjust the opacity to control darkness */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Keep the semi-transparent overlay */
     z-index: 1;
-    /* Ensures the overlay appears above the background but below the text */
 }
 
 .hero h1,
 .hero p {
     position: relative;
-    /* Ensures the text appears above the overlay */
     z-index: 2;
+    margin: top 60px;
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 2.5rem;
-    /* Scales with screen size */
-    
-    /*Move up*/
-    margin: 0 0 0vh;
-
+    margin: 0.5rem 0;
 }
 
 .hero p {
     font-size: 1.5rem;
-    /* Relative font size */
-    margin: 5vh 0 0;
+    margin: 0;
 }
-
+/* Search Form */
 .search-form {
     position: absolute;
-    /* Allows positioning over the hero background */
-    top: 65%;
-    /* Adjust this value to control vertical positioning */
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    /* Centers the form horizontally and vertically */
-    background-color: #d3d3d3;
+    transform: translate(-50%, -80%);
+    background-color: #cbc081;
     padding: 2rem;
-    border-radius: 2rem;
-    /* Rounded corners */
+    border-radius: 3rem;
     width: 80%;
-    max-width: 50rem;
-    /* Scales up to this maximum */
+    max-width: 800px;
     text-align: center;
     z-index: 3;
-    /* Places the search form above the overlay */
 }
 
 .search-form form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .search-form .form-row {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    /* Ensures inputs wrap on smaller screens */
 }
 
 .search-form select,
@@ -198,6 +210,7 @@ body {
     cursor: pointer;
     border-radius: 2rem;
     width: 15rem;
+    
     /* Fixed button width */
     font-size: 1.5rem;
     margin: 0 auto;
@@ -209,13 +222,105 @@ body {
     background-color: #333;
 }
 
-/* Footer Styling */
+/* Footer */
 .footer {
-    margin-top: 12rem;
-    width: 97.39333%;
-    /* Ensures footer occupies full width */
-    padding: 20px;
+    width: 100%;
+    height: 60px;
     background-color: #001f3f;
     color: #FFD700;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+/* Ensures no awkward spacing when the return date is hidden */
+#return-date {
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+
+.search-form input[type="number"] {
+    width: 100px;
+    /* Adjust width if needed */
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.search-form .form-row {
+    justify-content: center;
+    gap: 1rem;
+}
+
+.passenger-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* Space between input and label */
+}
+
+.passenger-count input[type="number"] {
+    width: 60px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.passenger-count label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        gap: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .search-form {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .navbar nav ul li a {
+        font-size: 0.8rem;
+    }
+
+    .search-form {
+        width: 95%;
+    }
 }

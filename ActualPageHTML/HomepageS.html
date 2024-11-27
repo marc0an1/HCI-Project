@@ -7,14 +7,16 @@
     <title>SwiftBat</title>
     <link rel="stylesheet" href="/ActualPageCSS/HomepageS.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="/ActualPageJS/HomepageS.js"></script>
 </head>
 
 <body>
     <header class="navbar">
-
-    <div class="logo">
-        <img src="/ActualWebsiteImages/SwiftBatLogoTransparentC.png" alt="SwiftBat Logo" class="logo-image">
-    </div>
+        <div class="logo">
+            <a href="/ActualPageHTML/HomepageS.html">
+                <img src="/ActualWebsiteImages/SwiftBatLogoTransparentC.png" alt="SwiftBat Logo" class="logo-image">
+            </a>
+        </div>
 
         <nav>
             <ul>
@@ -24,36 +26,52 @@
                 <li><a href="#">Travel Info</a></li>
             </ul>
         </nav>
+        
         <div class="sign-in">
-
-            <img src="/ActualWebsiteImages/UserIcon.png" alt="User Icon" class="user-icon"> <!-- Add the image -->
+            <img src="/ActualWebsiteImages/UserIcon.png" alt="User Icon" class="user-icon">
             <a href="#">Sign In</a>
         </div>
     </header>
 
     <main>
         <section class="hero">
+                <video autoplay muted loop class="hero-video">
+                    <source src="/ActualPageCSS/SwiftbatVideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            <div class = "hero-title">
             <h1>FLY WITH US!</h1>
             <p>Flights</p>
+            </div>
+
         </section>
         <section class="search-form">
             <form>
                 <div class="form-row">
-                    <select>
+                    <select id="trip-type" onchange="toggleReturnDate()">
                         <option value="roundtrip">Roundtrip</option>
                         <option value="oneway">One Way</option>
                     </select>
-                    <select>
-                        <option value="1">1 Adult</option>
-                        <option value="2">2 Adults</option>
-                        <option value="3">3 Adults</option>
-                    </select>
+                    <div class="form-row">
+                        <div class="passenger-count">
+                            <input type="number" id="adults" value="1" min="1" onchange="updatePassengerCount('adults')">
+                            <label id="adults-label">Adult</label>
+                        </div>
+                        <div class="passenger-count">
+                            <input type="number" id="children" value="0" min="0" onchange="updatePassengerCount('children')">
+                            <label id="children-label">Children</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-row">
-                    <input type="text" placeholder="From">
-                    <input type="text" placeholder="To">
-                    <input type="date" placeholder="Depart">
-                    <input type="date" placeholder="Return">
+                    <input type="text" placeholder="From" list="locations" id="from-location">
+                    <input type="text" placeholder="To" list="locations" id="to-location">
+                    <datalist id="locations">
+                        <option value="Miami, Florida">
+                        <option value="San Antonio, Texas">
+                    </datalist>
+                    <input type="date" id="depart-date" placeholder="Depart Date">
+                    <input type="date" id="return-date" placeholder="Return Date">
                 </div>
 
                 <button type="submit">Search flights</button>
@@ -61,10 +79,10 @@
         </section>
     </main>
 
-        <!-- Footer Section -->
-        <footer class="footer">
-            <p>&copy; 2024 SWIFTBAT</p>
-        </footer>
+    <footer class="footer">
+        <p>&copy; 2024 SWIFTBAT</p>
+    </footer>
+
 </body>
 
 </html>
