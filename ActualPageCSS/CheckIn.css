@@ -129,26 +129,45 @@ main {
     /* Ensure it appears above the image but below content */
 }
 
-.payment-section {
-    background-color: #001f3f;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 700px;
-    width: 90%;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    text-align: center;
-    margin-left: 500px;
-    margin-top: 140px;
+
+
+.hidden {
+    display: none;
 }
 
-.payment-section h2 {
+.form-section {
+    background-color: rgba(0, 31, 63, 0.9);
+    /* Slightly transparent navy blue */
+    border-radius: 15px;
+    /* Softer rounded corners */
+    padding: 40px;
+    /* Increased padding for spacious design */
+    width: 400px;
+    /* Fixed width for consistency */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    /* Deeper shadow for a "floating" effect */
+    text-align: center;
+    z-index: 2;
+    /* Ensure it's above the background */
+    margin: auto;
+    position: absolute;
+    /* Absolute positioning to center it */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Perfect centering */
+}
+
+.form-section h2 {
     color: #ffffff;
+    /* Bright gold for titles */
     margin-bottom: 20px;
     font-size: 24px;
+    font-family: 'NAVILL', sans-serif;
+    /* Use your preferred font */
 }
 
-.payment-form {
+.manage-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -163,53 +182,159 @@ main {
 
 .form-group label {
     color: #ffffff;
+    /* Bright gold for labels */
     font-size: 16px;
+    font-weight: bold;
 }
 
 .form-group input {
     background-color: #0056b3;
+    /* Bright blue for input background */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    /* Softer edges for inputs */
     padding: 10px;
     font-size: 16px;
     outline: none;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
     transition: transform 0.2s, background-color 0.3s;
 }
 
 .form-group input:focus {
     background-color: #0073e6;
+    /* Brighter blue on focus */
     transform: scale(1.05);
+    /* Slightly larger on focus */
 }
 
-.form-group-row {
-    display: flex;
-    gap: 20px;
-}
 
 .submit-button {
-    background-color: #0056b3;
-    color: #FFD700;
+    background-color: #FFD700;
+    /* Bright gold for the button */
+    color: #001f3f;
+    /* Dark navy for contrast */
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
+    /* Softer edges for the button */
     padding: 15px 25px;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /* Deeper shadow for the button */
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .submit-button:hover {
-    background-color: #0073e6;
+    background-color: #ffc107;
+    /* Lighter gold on hover */
     transform: scale(1.1);
+    /* Slightly larger on hover */
 }
 
 .submit-button:active {
     transform: scale(0.95);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Slightly smaller on click */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Lighter shadow on click */
 }
+.flights-section {
+    background-color: rgba(0, 31, 63, 0.9);
+    /* Slightly transparent navy blue */
+    border-radius: 15px;
+    /* Softer rounded corners */
+    padding: 50px;
+    /* Increased padding for spacious design */
+    width: 800px;
+    /* Wider box */
+    max-width: 90%;
+    /* Responsive design for smaller screens */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    /* Deeper shadow for a floating effect */
+    text-align: center;
+    z-index: 2;
+    /* Ensure it's above the background */
+    margin: auto;
+    position: absolute;
+    /* Centering the box */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Perfect centering */
+}
+
+.flights-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    /* More space between flight boxes */
+    justify-content: center;
+    /* Center align the flight boxes */
+}
+
+.flight-box {
+    background-color: #0056b3;
+    /* Bright blue */
+    color: white;
+    border-radius: 15px;
+    /* Softer corners */
+    padding: 30px;
+    /* Larger padding */
+    width: 400px;
+    /* Larger width for more content */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    /* Deeper shadow */
+    text-align: left;
+    /* Left align text for better readability */
+    position: relative;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 18px;
+    /* Increased font size for better readability */
+}
+
+.flight-box.checked-in {
+    background-color: #28a745;
+    /* Green for checked-in */
+}
+
+.flight-box:hover {
+    transform: scale(1.05);
+    /* Slightly larger on hover */
+}
+
+.flight-actions {
+    margin-top: 20px;
+    /* More space above the buttons */
+    display: flex;
+    justify-content: space-between;
+}
+
+.flight-actions button {
+    background-color: #FFD700;
+    /* Bright gold */
+    color: #001f3f;
+    /* Dark navy text */
+    border: none;
+    border-radius: 8px;
+    /* Softer edges */
+    padding: 12px 20px;
+    /* Larger button size */
+    font-size: 16px;
+    /* Larger text size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.flight-actions button:hover {
+    background-color: #ffc107;
+    /* Lighter gold on hover */
+    transform: scale(1.1);
+    /* Slightly larger on hover */
+}
+
 
 /*The sign in images*/
 
@@ -243,161 +368,4 @@ main {
     z-index: 10;
     margin-top: auto;
     padding: 0.5rem 1rem;
-}
-
-
-/*This is for the flight summary*/
-
-/* This is for the image in the middle of the airplane */
-
-.flight-summary {
-    text-align: center;
-    background-image: url('AirplanePic.JPG');
-    background-size: cover;
-    background-position: 80% 15%;
-    /* Move the image more to the left */
-    /* Adjust focus point */
-    padding: 0vh 0vw 5vw 5vw;
-    color: white;
-    position: relative;
-    height: calc(100vh - 60px);
-    /* Full height minus the navbar height */
-    width: 100%;
-    /* Adjust height to crop less/more */
-    overflow: hidden;
-    /* Ensure child elements stay within bounds */
-}
-
-.flight-summary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent black */
-    z-index: 1;
-    /* Ensure it appears above the image but below content */
-}
-
-.flight-summary .TripSummary h1 {
-    position: relative;
-    z-index: 2;
-    margin: 15rem 0;
-    margin-left: -60rem;
-    font-size: 3rem;
-}
-
-.flight-summary .TripSummaryBox {
-    display: inline-block;
-    margin-left: 740px;
-    /* Adjust to align with the title */
-    margin-top: -500px;
-    /* Adjust as necessary */
-    padding: 25px 35px;
-    /* Increased padding for more space */
-    background-color: #001f3f;
-    /* Dark blue background */
-    color: #ffffff;
-    /* White text color */
-    border-radius: 15px;
-    /* Rounded corners for a smoother look */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    /* Stronger shadow effect */
-    font-size: 18px;
-    /* Slightly larger font size for readability */
-    max-width: 600px;
-    /* Increased width */
-    min-height: 250px;
-    min-width: 400px;
-    /* Set a minimum height to make it larger */
-    text-align: left;
-    /* Align text to the left */
-    line-height: 1.8;
-    /* Improve spacing between lines */
-    z-index: 2;
-    /* Ensure it appears above other elements */
-
-}
-
-/* Styling for the Flight Summary Title */
-.TripSummaryBox h2 {
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-size: 30px;
-    color: #FFD700;
-    /* Golden color for emphasis */
-    text-align: center;
-}
-
-.TripSummaryBox p {
-    margin: 8px 0;
-    /* Space between lines */
-    font-size: 25px;
-}
-
-.trip-summary-container {
-    display: flex;
-    /* Align items horizontally */
-    align-items: center;
-    /* Vertically center-align the title and box */
-    margin-top: 20px;
-    /* Add spacing above the container */
-}
-
-.continue-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #FFD700;
-    /* Golden button color */
-    color: #001f3f;
-    /* Dark blue text color */
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    z-index: 2;
-}
-
-.continue-button:hover {
-    background-color: #e6b800;
-    /* Slightly darker on hover */
-    transform: scale(1.1);
-    /* Slightly larger on hover */
-}
-
-.continue-button:active {
-    transform: scale(0.95);
-    /* Pressed effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Reduced shadow on press */
-}
-
-.pdf-button {
-    display: inline-block;
-    background-color: #0056b3;
-    color: #FFD700;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, transform 0.2s;
-    z-index: 2;
-}
-
-.pdf-button:hover {
-    background-color: #0073e6;
-    transform: scale(1.1);
-}
-
-.pdf-button:active {
-    transform: scale(0.95);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

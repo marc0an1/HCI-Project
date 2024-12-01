@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment for SwiftBat</title>
-    <link rel="stylesheet" href="/ActualPageCSS/PaymentS.css">
+    <title>SwiftBat</title>
+    <link rel="stylesheet" href="/ActualPageCSS/ManageTrips.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script defer src="/ActualPageJS/PaymentS.js"></script>
+    <script defer src="/ActualPageJS/ManageTrips.js"></script>
 </head>
 
 <body>
@@ -34,33 +34,25 @@
     </header>
 
     <main class="background-container">
-        <section class="payment-section">
-            <h2>Payment Information</h2>
-            <form id="payment-form" class="payment-form">
+        <section class="form-section">
+            <h2>Manage Your Trip</h2>
+            <form id="manage-form" class="manage-form">
                 <div class="form-group">
-                    <label for="card-name">Name as it appears on card</label>
-                    <input type="text" id="card-name" placeholder="John Doe">
-                </div>
-                <div class="form-group">
-                    <label for="card-number">Credit Card Number</label>
-                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
-                </div>
-                <div class="form-group-row">
-                    <div class="form-group">
-                        <label for="expiry-date">MM/YY</label>
-                        <input type="text" id="expiry-date" placeholder="MM/YY">
-                    </div>
-                    <div class="form-group">
-                        <label for="security-code">Security Code</label>
-                        <input type="text" id="security-code" placeholder="123">
-                    </div>
+                    <label for="flight-number">Flight Number</label>
+                    <input type="text" id="flight-number" placeholder="Enter your flight number">
                 </div>
                 <div class="form-group">
-                    <label for="billing-address">Billing Address</label>
-                    <input type="text" id="billing-address" placeholder="123 Main Street">
+                    <label for="passenger-name">Passenger Name</label>
+                    <input type="text" id="passenger-name" placeholder="Enter passenger name">
                 </div>
-                <button type="submit" class="submit-button">Submit Payment</button>
+                <button type="submit" class="submit-button">Submit</button>
             </form>
+        </section>
+        <section id="flights-section" class="flights-section hidden">
+            <h2>Available Flights</h2>
+            <div id="flights-container" class="flights-container">
+                <!-- Flights will be dynamically added here -->
+            </div>
         </section>
     </main>
 

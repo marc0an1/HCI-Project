@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - SwiftBat</title>
+    <link rel="stylesheet" href="/ActualPageCSS/Signin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script defer src="/ActualPageJS/SignIn.js"></script>
+
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="/ActualPageHTML/HomepageS.html">
+                <img src="/ActualWebsiteImages/SwiftBatLogoTransparentC.png" alt="SwiftBat Logo" class="logo-image">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="HomepageS.html">Book</a></li>
+                <li><a href="ManageTrips.html">Manage Trips</a></li>
+                <li><a href="CheckIn.html">Check In</a></li>
+                <li><a href="TravelInfo.html">Travel Info</a></li>
+            </ul>
+        </nav>
+
+        <div class="sign-in">
+            <img src="/ActualWebsiteImages/UserIcon.png" alt="User Icon" class="user-icon">
+            <a href="Signin.html">Sign In</a>
+        </div>
+    </header>
+
+    <main class="background-container">
+        <!-- Create Account Form -->
+        <section id="create-account" class="form-section">
+            <h2>Create an Account</h2>
+            <form class="sign-up-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="submit-button">Create Account</button>
+                <button type="button" class="switch-button" onclick="toggleForm('login')">Log in</button>
+            </form>
+        </section>
+    
+        <!-- Log In Form -->
+        <section id="log-in" class="form-section hidden">
+            <h2>Log in to Your Account</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="submit-button">Log In</button>
+                <button type="button" class="switch-button" onclick="toggleForm('create-account')">Create Account</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="../index.html" target="_blank" rel="noopener noreferrer">
+            <p>&copy; 2024 SWIFTBAT</p>
+        </a>
+    </footer>
+</body>
+
+</html>
