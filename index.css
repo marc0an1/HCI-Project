@@ -94,3 +94,196 @@ h1 {
     background-color: #dac96b;
     border-radius: 4px;
 }
+
+/* General Aesthetic for Analysis Sections */
+.analysis-section {
+    margin: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    /* Light blue */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffd700;
+    /* Gold border */
+    display: flex;
+        justify-content: center;        /* Centers items horizontally */
+        align-items: center;
+        /* Centers items vertically */
+        gap: 30px;
+        /* Adds space between images */
+        flex-wrap: wrap;
+        /* Allows images to wrap to the next row if needed */
+    
+}
+
+.analysis-section h2,
+.analysis-section h3 {
+    color: #0047ab;
+    /* Dark blue */
+    margin-bottom: 10px;
+}
+
+.analysis-section p {
+    line-height: 1.6;
+    color: #333;
+    /* Neutral text color */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ffd700;
+    /* Gold borders */
+}
+
+/* Correlation Table Styling */
+.correlation-table {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f0f8ff;
+    /* Light blue */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    overflow-x: auto;
+    border: 2px solid #ffd700;
+    /* Gold border */
+}
+
+.correlation-table h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0047ab;
+    /* Dark blue */
+}
+
+.correlation-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.correlation-table thead {
+    background-color: #0047ab;
+    /* Dark blue */
+    color: #ffd700;
+    /* Gold text */
+}
+
+.correlation-table th,
+.correlation-table td {
+    padding: 12px 15px;
+    border: 1px solid #ffd700;
+    /* Gold borders */
+}
+
+.correlation-table tr:nth-child(even) {
+    background-color: #e6f2ff;
+    /* Slightly lighter blue for alternating rows */
+}
+
+.correlation-table tr:hover {
+    background-color: #d4ebff;
+    /* Light blue hover effect */
+}
+
+.correlation-table th {
+    font-weight: bold;
+    color: #ffd700;
+    /* Gold text for headers */
+}
+
+/* Statistics Table Styling */
+.statistics-table {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f0f8ff;
+    /* Light blue */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    overflow-x: auto;
+    border: 2px solid #ffd700;
+    /* Gold border */
+}
+
+.statistics-table h2 {
+    text-align: center;
+    color: #0047ab;
+    /* Dark blue */
+    margin-bottom: 20px;
+}
+
+.statistics-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.statistics-table thead {
+    background-color: #0047ab;
+    /* Dark blue */
+    color: #ffd700;
+    /* Gold text */
+}
+
+.statistics-table th,
+.statistics-table td {
+    padding: 12px 15px;
+    border: 1px solid #ffd700;
+    /* Gold borders */
+}
+
+.statistics-table tr:nth-child(even) {
+    background-color: #e6f2ff;
+    /* Slightly lighter blue for alternating rows */
+}
+
+.statistics-table tr:hover {
+    background-color: #d4ebff;
+    /* Light blue hover effect */
+}
+
+.statistics-table th {
+    font-weight: bold;
+    color: #ffd700;
+    /* Gold text for headers */
+}
+
+.statistics-table td {
+    word-wrap: break-word;
+    color: #333;
+    /* Neutral text color for data */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    /* Centers items horizontally */
+    align-items: center;
+    /* Centers items vertically */
+    gap: 20px;
+    /* Adds space between images */
+    flex-wrap: wrap;
+    /* Allows images to wrap to the next row if needed */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    /* Ensures images maintain their aspect ratio */
+    border: 2px solid #0047ab;
+    /* Optional: Add a border for aesthetics */
+    border-radius: 10px;
+    /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a shadow for depth */
+}
